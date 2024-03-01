@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-@RequestMapping("/news")
+@RequestMapping(value="/news")
 public class NewsWebController {
+	
 	final NewsDAO dao;
+	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	//application.properties 파일로부터 저장 경로 참조
@@ -35,8 +37,10 @@ public class NewsWebController {
 	
 	
 	//뉴스추가
-	@PostMapping
+	@PostMapping("/add")
 	public String addNews(@ModelAttribute News news, Model m, @RequestParam("file") MultipartFile file) {
+		
+		logger.info("경로 : " + fdir);
 		
 		try {
 			//저장 파일 객체 만들기
