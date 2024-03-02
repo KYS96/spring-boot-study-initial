@@ -43,7 +43,6 @@
 	</button>
 	
 	<!-- 뉴스 양식 -->
-	<!--enctype="multipart/form-data"-->
 	<div class="collapse" id="addForm">
 		<div class="card card-body">
 			<form method="post" action="/news/add" enctype="multipart/form-data">

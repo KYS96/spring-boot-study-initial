@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-@RequestMapping(value="/news")
+@RequestMapping("/news")
 public class NewsWebController {
 	
 	final NewsDAO dao;
@@ -40,12 +40,10 @@ public class NewsWebController {
 	@PostMapping("/add")
 	public String addNews(@ModelAttribute News news, Model m, @RequestParam("file") MultipartFile file) {
 		
-		logger.info("경로 : " + fdir);
-		
 		try {
 			//저장 파일 객체 만들기
 			//파일 저장 경로
-			File dest = new File(fdir+" / "+file.getOriginalFilename());
+			File dest = new File(fdir+"/"+file.getOriginalFilename());
 			
 			//파일 저장
 			file.transferTo(dest);
