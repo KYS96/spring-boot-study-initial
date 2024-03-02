@@ -8,6 +8,17 @@ public class News {
 	private String date;
 	private String content;
 	
+	public News() {}
+	
+	public News(int aid, String title, String img, String date, String content) {
+		super();
+		this.aid = aid;
+		this.title = title;
+		this.img = img;
+		this.date = date;
+		this.content = content;
+	}
+	
 	public int getAid() {
 		return aid;
 	}

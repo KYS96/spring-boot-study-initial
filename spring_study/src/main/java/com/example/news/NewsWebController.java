@@ -48,8 +48,12 @@ public class NewsWebController {
 			//파일 저장
 			file.transferTo(dest);
 			
+			// 저장경로 : /img/파일이름 저장되도록
+			String imgPath = (dest.getPath()).substring((dest.getPath()).indexOf("\\img\\"));
+			
 			//News 객체에 파일 이름 저장
-			news.setImg(dest.getName());
+			//news.setImg(dest.getName());
+			news.setImg(imgPath);
 			dao.addNews(news);
 		} catch (Exception e) {
 			e.printStackTrace();
